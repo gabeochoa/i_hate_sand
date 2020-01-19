@@ -122,20 +122,26 @@ function tick(){
             item.emitter.myp -= 1;
             array.splice(index, 1);
         },
-        (item, _) => item === undefined || item.life < 0 || item.pos.y > height || item.pos.y < 0
+        (item, _) => (
+            item === undefined || item.life < 0 || 
+            item.pos.y > height || item.pos.y < 0
+        )
     );
 
     calculate_densities()
     calculate_forces()
 
     particles.onPred(
-        (_a, item, _b) => item.update(),
+        (_a, item, _b) => {
+            item.update()
+            item.draw()
+        },
         () => true
     );
 
     emitters.onPred(
-        (_a, item, _b) => { item.update() },
-        () => {return true;}
+        (_a, item, _b) => item.update(),
+        () => true
     )
 }
 
@@ -236,13 +242,10 @@ function keyStuff() {
   return [x, y];
 }
 
+
 function draw() {
-    frameRate(30)
     background(0);
     tick()
-    for(const p of particles){
-        p.draw()
-    }
     if(mouseIsPressed){
         const a = new Particle(null, mouseX, mouseY, 100, false, true)
         particles.push(a)
