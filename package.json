@@ -1,0 +1,28 @@
+{
+  "name": "i_hate_sand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "browser-refresh": "^1.7.3",
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "livereload": "^0.8.2",
+    "nodemon": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabeochoa/i_hate_sand.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabeochoa/i_hate_sand/issues"
+  },
+  "homepage": "https://github.com/gabeochoa/i_hate_sand#readme"
+}
